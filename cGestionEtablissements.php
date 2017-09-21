@@ -105,6 +105,9 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
                 ajouterErreur("L'établissement $id existe déjà");
             }
         }
+        if (!estChiffresEtLettres($nom)){
+            ajouterErreur("Le nom de l'établissement doit comporter uniquement des lettres et des chiffres !");
+        }
     }
     if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {
         ajouterErreur("L'établissement $nom existe déjà");
