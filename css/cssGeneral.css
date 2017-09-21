@@ -3,17 +3,18 @@
 /* Style de base pour la page (couleur fond : vert pâle, couleur texte : noir) */
 .basePage 
 {
-   background-color:#DDFF88;
+   background-image:url(../images/background.jpg);
+   background-attachment:fixed;
    color:black;
-   font:11px Arial, Helvetica, sans-serif;
+   font:13px Arial, Helvetica, sans-serif;
 }
 
 /* Style pour le titre (couleur du texte : rouge) */
 .titre 
 {
-   background-color:#DDFF88;
-   color:#F50033;
-   font:30px Arial, Helvetica, sans-serif;
+   color:#0026FF;
+   font:30px Impact, Helvetica, sans-serif;
+   font-weight: bold;
    text-align:center;
 }
 
@@ -27,9 +28,8 @@
 mise en gras et en italique) */
 .texteAccueil
 {
-   background-color:#DDFF88;
-   color:#000099;       
-   font:14px Georgia, "Times New Roman", Times, serif;
+   color:black;       
+   font:16px Georgia, "Times New Roman", Times, serif;
    font-weight:bold;
    font-style:italic;
    text-align:left;
