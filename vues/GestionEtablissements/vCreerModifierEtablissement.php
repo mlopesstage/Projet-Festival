@@ -110,7 +110,7 @@ echo '
       <tr class="ligneTabNonQuad">
          <td> Téléphone*: </td>
          <td><input type="text" value="' . $tel . '" name="tel" size ="20" 
-         maxlength="10" placeholder="10 chiffres sans espace" > <td>
+         maxlength="10" placeholder="Format: 0XXXXXXXXX" > <td>
       </tr>
       <tr class="ligneTabNonQuad">
          <td> E-mail: </td>
