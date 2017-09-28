@@ -28,7 +28,7 @@ switch ($action) {
         include("vues/GestionGroupes/vObtenirGroupes.php");
         break;
 
-  //  case 'detailGroupe':
+    case 'detailGroupe':
         $id = $_REQUEST['id'];
         include("vues/GestionGroupes/vObtenirDetailGroupe.php");
         break;
@@ -83,9 +83,9 @@ switch ($action) {
             if (nbErreurs() == 0) {
                 $unGroupe = new Groupe($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement);
                 GroupeDAO::update($id, $unGroupe);
-                include("vues/GestionGroupe/vObtenirGroupes.php");
+                include("vues/GestionGroupes/vObtenirGroupes.php");
             } else {
-                include("vues/GestionGroupe/vCreerModifierGroupe.php");
+                include("vues/GestionGroupes/vCreerModifierGroupe.php");
             }
         }
         break;
@@ -96,6 +96,8 @@ Bdd::deconnecter();
 
 
 
+
+//////////
 
 
 
@@ -123,17 +125,18 @@ function verifierDonneesGroupeC($id, $nom, $identite, $adresse, $nbPers, $nomPay
         ajouterErreur("Le Groupe $nom existe déjà");
     }
     
+    //////////
        
 }
 
 
 function verifierDonneesGroupeM($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement) {
-    if ($nom == "" || $identite == "" || $adresse == "" || $nbPers == "" ||
-            $nomPays == "" || $hebergement == "") {
+    if ($nom == "" || $identite == "" || $adresse == "" || $ville == "" ||
+            $tel == "" || $nomResponsable == "" || $adresseElectronique== "") {
         ajouterErreur('Chaque champ suivi du caractère * est obligatoire');
     }
-    if ($nom != "" && GroupeDAO::isAnExistingName(false, $id, $nom)) {
-        ajouterErreur("Le Groupe $nom existe déjà");
+    if ($nom != "" && EtablissementDAO::isAnExistingName(false, $id, $nom)) {
+        ajouterErreur("Le groupe $nom existe déjà");
     }
 
 
