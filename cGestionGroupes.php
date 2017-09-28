@@ -136,7 +136,7 @@ function verifierDonneesGroupeM($id, $nom, $identite, $adresse, $nbPers, $nomPay
         ajouterErreur('Chaque champ suivi du caractère * est obligatoire');
     }
     if ($nom != "" && EtablissementDAO::isAnExistingName(false, $id, $nom)) {
-        ajouterErreur("L'établissement $nom existe déjà");
+        ajouterErreur("Le groupe $nom existe déjà");
     }
 
 

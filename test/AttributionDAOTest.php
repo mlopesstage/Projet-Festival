@@ -64,9 +64,9 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°6
         echo "<h3>6- insert</h3>";
         $idEtab = '0350773A';
-        $idTypeCh = 'C2';
+        $idTypeCh = 'C3';
         $idGroupe = 'g005';
-        $nb = 9;
+        $nb = 2;
         try {
 //            /* @var $unEtab modele\metier\Offre */
 //            $uneOffre = OffreDAO::getOneById($idEtab, $idTypeCh);
@@ -74,7 +74,7 @@ require_once __DIR__ . '/../includes/autoload.php';
 //            $unGroupe = GroupeDAO::getOneById($idGroupe);
 //            /* @var $objet modele\metier\Offre */
 //            $objet = new Attribution($uneOffre, $unGroupe, $idGroupe);
-            $ok = AttributionDAO::insertValues($idEtab, $idTypeCh, $idGroupe, $idGroupe);
+            $ok = AttributionDAO::insertValues($idEtab, $idTypeCh, $idGroupe, $nb);
             if ($ok) {
                 echo "<h4>ooo réussite de l'insertion ooo</h4>";
                 $objetLu = AttributionDAO::getOneById($idEtab, $idTypeCh, $idGroupe);
@@ -87,9 +87,9 @@ require_once __DIR__ . '/../includes/autoload.php';
         }
 
         // Test n°7
-        echo "<h3>7- update</h3>";
+        echo "<h3>7-update</h3>";
         $idEtab = '0350773A';
-        $idTypeCh = 'C2';
+        $idTypeCh = 'C3';
         $idGroupe = 'g005';
         $newNb = 10;
         try {
@@ -121,6 +121,13 @@ require_once __DIR__ . '/../includes/autoload.php';
         } catch (Exception $e) {
             echo "<h4>*** échec de la requête ***</h4>" . $e->getMessage();
         }
+        
+        // Test n°9
+        echo "<h3>5- getAllByIdGp</h3>";
+        $idGp = 'g002';
+        $lesObjets = AttributionDAO::getAllByIdGp($idGp);
+        var_dump($lesObjets);
+         
         
         Bdd::deconnecter();
         ?>

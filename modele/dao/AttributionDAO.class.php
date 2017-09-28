@@ -105,6 +105,25 @@ class AttributionDAO {
         return $lesObjets;
     }
 
+        /**
+     * Liste des objets Attribution concernant un établissement donné
+     * @param string $idGp : identifiant de l'établissement dont on filtre les attributions
+     * @return array : tableau d'Attribution(s)
+     */
+    public static function getAllByIdGp($idGp) {
+        $lesObjets = array();
+        $requete = "SELECT * FROM Attribution WHERE IDGROUPE = :idGroupe";
+        $stmt = Bdd::getPdo()->prepare($requete);
+        $stmt->bindParam(':idGroupe', $idGp);
+        $ok = $stmt->execute();
+        if ($ok) {
+            while ($enreg = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $lesObjets[] = self::enregVersMetier($enreg);
+            }
+        }
+        return $lesObjets;
+    }
+    
     /**
      * Construire un objet d'après son identifiant, à partir des des enregistrements de la table ATTRIBUTION
      * L'identifiant de la table Attribution est composé : ($idEtab, $idTypeChambre, $idGroupe)
