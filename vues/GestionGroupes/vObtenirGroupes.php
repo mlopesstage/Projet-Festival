@@ -25,9 +25,9 @@ foreach ($lesGroupes as $UnGroupe) {
     $id = $UnGroupe->getId();
     $nom = $UnGroupe->getNom();
     echo "
-		<tr class='ligneTabNonQuad'>
-         <td width='52%'>$nom</td>
-         
+	 <tr class='ligneTabNonQuad'>
+         <td width='52%'>$nom</td>";
+        /*
          <td width='16%' align='center'> 
          <a href='cGestionGroupes.php?action=detailGp&id=$id'>
          Voir détail</a></td>
@@ -35,11 +35,12 @@ foreach ($lesGroupes as $UnGroupe) {
          <td width='16%' align='center'> 
          <a href='cGestionGroupes.php?action=demanderModifierGp&id=$id'>
          Modifier</a></td>";
+        */
 
     // S'il existe déjà des attributions pour les groupes il faudra
     // d'abord les supprimer avant de pouvoir supprimer le groupe
-//    if (!existeAttributionsGp($connexion, $id)) {
-    $lesAttributionsDeCeGroupes = AttributionDAO::getAllByIdGp($id);
+    // if (!existeAttributionsGp($connexion, $id)) {
+    /*$lesAttributionsDeCeGroupes = AttributionDAO::getAllByIdGp($id);
     if (count($lesAttributionsDeCeGroupes)==0) {
         echo "
             <td width='16%' align='center'> 
@@ -48,7 +49,7 @@ foreach ($lesGroupes as $UnGroupe) {
     } else {
         echo "
             <td width='16%'>&nbsp; </td>";
-    }
+    }*/
     echo "
       </tr>";
 }

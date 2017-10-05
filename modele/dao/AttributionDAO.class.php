@@ -105,9 +105,9 @@ class AttributionDAO {
         return $lesObjets;
     }
 
-        /**
+    /**
      * Liste des objets Attribution concernant un établissement donné
-     * @param string $idGp : identifiant de l'établissement dont on filtre les attributions
+     * @param string $idGp : identifiant du groupe dont on filtre les attributions
      * @return array : tableau d'Attribution(s)
      */
     public static function getAllByIdGp($idGp) {

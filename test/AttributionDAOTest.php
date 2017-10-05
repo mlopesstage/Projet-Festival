@@ -123,7 +123,7 @@ require_once __DIR__ . '/../includes/autoload.php';
         }
         
         // Test n°9
-        echo "<h3>5- getAllByIdGp</h3>";
+        echo "<h3>9- getAllByIdGp</h3>";
         $idGp = 'g002';
         $lesObjets = AttributionDAO::getAllByIdGp($idGp);
         var_dump($lesObjets);
