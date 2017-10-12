@@ -26,14 +26,14 @@ class Lieu {
      * adresseLieu
      * @var integer
      */
-    private $capaciteaccueil;
+    private $capaciteAccueil;
     
     
-    function __construct($id, $nomLieu, $adresseLieu, $capaciteaccueil) {
+    function __construct($id, $nomLieu, $adresseLieu, $capaciteAccueil) {
         $this->id = $id;
         $this->nomLieu = $nomLieu;
         $this->adresseLieu = $adresseLieu;
-        $this->capaciteaccueil = $capaciteaccueil;
+        $this->capaciteAccueil = $capaciteAccueil;
         
     }
 
@@ -49,8 +49,8 @@ class Lieu {
         return $this->adresseLieu;
     }
 
-    function getcapaciteaccueil() {
-        return $this->capaciteaccueil;
+    function getcapaciteAccueil() {
+        return $this->capaciteAccueil;
     }
 
    function setId($id) {
@@ -65,8 +65,8 @@ class Lieu {
         $this->adresseLieu = $adresseLieu;
     }
 
-    function setcapaciteaccueil($capaciteaccueil) {
-        $this->capaciteaccueil = $capaciteaccueil;
+    function setcapaciteAccueil($capaciteAccueil) {
+        $this->capaciteAccueil = $capaciteAccueil;
     }
 
 }
