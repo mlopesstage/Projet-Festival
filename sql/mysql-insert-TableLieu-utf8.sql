@@ -1,4 +1,3 @@
-
 insert into Lieu values ('1', 'SALLE DU PANIER FLEURI', 'Rue de Bonneville', '450');
 insert into Lieu values ('2', 'LE CABARET', 'MAIRIE ANNEXE DE PANAME, Place Georges COUDRAY', '250');  
 insert into Lieu values ('3', 'LE PARC DES CHENES', '14 rue des chênes', '2000');   
