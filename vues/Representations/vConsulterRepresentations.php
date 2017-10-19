@@ -1,7 +1,6 @@
 <?php
-use \modele\dao\TypeChambreDAO;
-use modele\dao\EtablissementDAO;
-use modele\dao\OffreDAO;
+use \modele\dao\RepresentationDAO;
+use \modele\dao\LieuDAO;
 use modele\dao\Bdd;
 require_once __DIR__ . '/../../includes/autoload.php';
 Bdd::connecter();
@@ -9,7 +8,7 @@ Bdd::connecter();
 include("includes/_debut.inc.php");
 
 // CONSULTER LES REPRESENTATIONS
-// IL FAUT QU'IL Y AIT AU MOINS UNE REPRESENTATION
+// IL FAUT QU'IL Y AIT AU MOINS UNE REPRESENTATION POUR QUE
 // L'AFFICHAGE SOIT EFFECTUÉ
 $lesRepresentations = RepresentationDAO::getAll();
 $nbRep = count($lesRepresentations);
@@ -21,9 +20,9 @@ if ($nbRep != 0 && $nbTypesRepresentation != 0) {
     // LIGNE D'EN-TÊTE ET 1 LIGNE PAR TYPE DE CHAMBRE
 
     // BOUCLE SUR LES REPRESENTATION
-    foreach ($lesEtablissements as $unEtablissement) {
-        $idRep = $unEtablissement->getId();
-        $nom = $unEtablissement->getNom();
+    foreach ($lesRepresentations as $uneRepresentation) {
+        $idRep = $uneRepresentation->getId();
+        $nom = $uneRepresentation->getNom();
 
         // AFFICHAGE DU NOM DE LA REPRESENTATION ET D'UN LIEN VERS LE FORMULAIRE DE
         // MODIFICATION
