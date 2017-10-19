@@ -15,14 +15,14 @@ class Representation {
     private $id;
     
     /** nom du lieu
-     * @var string
+     * @var Lieu
      */
-    private $idLieu;
+    private $leLieu;
     /**
      * nom du groupe
-     * @var string
+     * @var Groupe
      */
-    private $idGroupe;
+    private $leGroupe;
     /**
      * date
      * @var Date
@@ -41,31 +41,32 @@ class Representation {
     private $heureFin ;
     
     
-    function __construct($id, $idLieu, $idGroupe, $dateRep, $heureDebut, $heureFin) {
+    function __construct($id, Lieu $leLieu, Groupe $leGroupe, $dateRep, $heureDebut, $heureFin) {
         $this->id = $id;
-        $this->idLieu = $idLieu;
-        $this->idGroupe = $idGroupe;
+        $this->leLieu = $leLieu;
+        $this->leGroupe = $leGroupe;
         $this->dateRep = $dateRep;
         $this->heureDebut = $heureDebut;
         $this->heureFin= $heureFin;
         
     }
-
+    
     function getId() {
         return $this->id;
     }
 
-    function getIdLieu() {
-        return $this->idLieu;
+    function getLeLieu() {
+        return $this->leLieu;
     }
 
-    function getIdGroupe() {
-        return $this->idGroupe;
+    function getLeGroupe() {
+        return $this->leGroupe;
     }
 
     function getDateRep() {
         return $this->dateRep;
     }
+
     function getHeureDebut() {
         return $this->heureDebut;
     }
@@ -73,26 +74,29 @@ class Representation {
     function getHeureFin() {
         return $this->heureFin;
     }
-   function setId($id) {
+
+    function setId($id) {
         $this->id = $id;
     }
 
-    function setIdLieu($idLieu) {
-        $this->idLieu = $idLieu;
+    function setLeLieu(Lieu $leLieu) {
+        $this->leLieu = $leLieu;
     }
 
-    function setIdGroupe($idGroupe) {
-        $this->idGroupe = $idGroupe;
+    function setLeGroupe(Groupe $leGroupe) {
+        $this->leGroupe = $leGroupe;
     }
 
-    function setDateRep($dateRep) {
-        $this->dateRep= $dateRep;
+    function setDateRep(Date $dateRep) {
+        $this->dateRep = $dateRep;
     }
-    function setHeureDebut($heureDebut) {
+
+    function setHeureDebut(temps $heureDebut) {
         $this->heureDebut = $heureDebut;
     }
 
-    function setHeureFin($heureFin) {
+    function setHeureFin(temps $heureFin) {
         $this->heureFin = $heureFin;
     }
+
 }

@@ -2,6 +2,9 @@
 namespace modele\dao;
 
 use modele\metier\Representation;
+use modele\metier\Groupe;
+use modele\dao\LieuDAO;
+use modele\dao\GroupeDAO;
 use \PDO;
 
 /**
@@ -24,9 +27,31 @@ class RepresentationDAO {
         $dateRep = $enreg['DATEREP'];
         $heureDebut = $enreg['HEUREDEBUT'];
         $heureFin = $enreg['HEUREFIN'];
-        $uneRepresentation = new Representation($id, $idLieu, $idGroupe, $dateRep, $heureDebut, $heureFin);
+        // construire les objets Lieu et Groupe à partir de leur identifiant       
+        $objetLieu = LieuDAO::getOneById($idLieu);
+        $objetGroupe = GroupeDAO::getOneById($idGroupe);
+        // instancier l'objet Offre
+        $uneRepresentation = new Representation($id, $objetLieu, $objetGroupe, $dateRep, $heureDebut, $heureFin);
 
         return $uneRepresentation;
+    }
+    
+    /**
+     * Valorise les paramètres d'une requête préparée avec l'état d'un objet Etablissement
+     * @param type $uneRepresentation un Etablissement
+     * @param type $stmt requête préparée
+     */
+    protected static function metierVersEnreg(Representation $uneRepresentation, PDOStatement $stmt) {
+        // On utilise bindValue plutôt que bindParam pour éviter des variables intermédiaires
+        // Note : bindParam requiert une référence de variable en paramètre n°2 ; 
+        // avec bindParam, la valeur affectée à la requête évoluerait avec celle de la variable sans
+        // qu'il soit besoin de refaire un appel explicite à bindParam
+        $stmt->bindValue(':id', $uneRepresentation->getId());
+        $stmt->bindValue(':idlieu', $uneRepresentation->getLeLieu());
+        $stmt->bindValue(':idgroupe', $uneRepresentation->getLeGroupe());
+        $stmt->bindValue(':daterep', $uneRepresentation->getDateRep());
+        $stmt->bindValue(':heuredebut', $uneRepresentation->getHeureDebut());
+        $stmt->bindValue(':heurefin', $uneRepresentation->getHeureFin());
     }
 
     /**
@@ -65,4 +90,6 @@ class RepresentationDAO {
         }
         return $objetConstruit;
     }
+    
+    
 }
