@@ -11,9 +11,9 @@ include("includes/_debut.inc.php");
 // CONSULTER LES REPRESENTATIONS
 // IL FAUT QU'IL Y AIT AU MOINS UNE REPRESENTATION
 // L'AFFICHAGE SOIT EFFECTUÉ
-$lesRepresentations = REPRESENTATIONDAO::getAll();
+$lesRepresentations = RepresentationDAO::getAll();
 $nbRep = count($lesRepresentations);
-$lesTypesRepresentation = TypeChambreDAO::getAll();
+$lesTypesRepresentation = LieuDAO::getAll();
 $nbTypesRepresentation = count($lesTypesRepresentation);
 
 if ($nbRep != 0 && $nbTypesRepresentation != 0) {
