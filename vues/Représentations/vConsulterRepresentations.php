@@ -8,27 +8,27 @@ Bdd::connecter();
 
 include("includes/_debut.inc.php");
 
-// CONSULTER LES OFFRES DE TOUS LES ÉTABLISSEMENTS
-// IL FAUT QU'IL Y AIT AU MOINS UN ÉTABLISSEMENT ET UN TYPE CHAMBRE POUR QUE 
+// CONSULTER LES REPRESENTATIONS
+// IL FAUT QU'IL Y AIT AU MOINS UNE REPRESENTATION
 // L'AFFICHAGE SOIT EFFECTUÉ
-$lesEtablissements = EtablissementDAO::getAll();
-$nbEtab = count($lesEtablissements);
-$lesTypesChambres = TypeChambreDAO::getAll();
-$nbTypesChambres = count($lesTypesChambres);
+$lesRepresentations = REPRESENTATIONDAO::getAll();
+$nbRep = count($lesRepresentations);
+$lesTypesRepresentation = TypeChambreDAO::getAll();
+$nbTypesRepresentation = count($lesTypesRepresentation);
 
-if ($nbEtab != 0 && $nbTypesChambres != 0) {
-    // POUR CHAQUE ÉTABLISSEMENT : AFFICHAGE DU NOM ET D'UN TABLEAU COMPORTANT 1
+if ($nbRep != 0 && $nbTypesRepresentation != 0) {
+    // POUR CHAQUE REPRESENTATION : AFFICHAGE DU NOM ET D'UN TABLEAU COMPORTANT 1
     // LIGNE D'EN-TÊTE ET 1 LIGNE PAR TYPE DE CHAMBRE
 
-    // BOUCLE SUR LES ÉTABLISSEMENTS
+    // BOUCLE SUR LES REPRESENTATION
     foreach ($lesEtablissements as $unEtablissement) {
-        $idEtab = $unEtablissement->getId();
+        $idRep = $unEtablissement->getId();
         $nom = $unEtablissement->getNom();
 
-        // AFFICHAGE DU NOM DE L'ÉTABLISSEMENT ET D'UN LIEN VERS LE FORMULAIRE DE
+        // AFFICHAGE DU NOM DE LA REPRESENTATION ET D'UN LIEN VERS LE FORMULAIRE DE
         // MODIFICATION
         echo "<strong>$nom</strong><br>
-      <a href='cOffreHebergement.php?action=demanderModifierOffre&idEtab=$idEtab'>
+      <a href='cRepresentation.php?action=demanderModifier&idRep=$idRep'>
       Modifier</a>
    
       <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
@@ -36,31 +36,30 @@ if ($nbEtab != 0 && $nbTypesChambres != 0) {
         // AFFICHAGE DE LA LIGNE D'EN-TÊTE
         echo "
          <tr class='enTeteTabQuad'>
-            <td width='30%'>Type</td>
-            <td width='35%'>Capacité</td>
-            <td width='35%'>Nombre de chambres</td> 
+            <td width='30%'>Lieu</td>
+            <td width='35%'>Groupe</td>
+            <td width='35%'>Heure Début</td> 
+            <td width='35%'>Heure Fin</td> 
          </tr>";
 
-        // BOUCLE SUR LES TYPES DE CHAMBRES (AFFICHAGE D'UNE LIGNE PAR TYPE DE 
-        // CHAMBRE AVEC LE NOMBRE DE CHAMBRES OFFERTES DANS L'ÉTABLISSEMENT POUR 
+        // BOUCLE SUR LES TYPES DE REPRESENTATION (AFFICHAGE D'UNE LIGNE PAR TYPE DE 
+        // REPRESENTATION AVEC LE NOMBRE DE CHAMBRES OFFERTES DANS L'ÉTABLISSEMENT POUR 
         // LE TYPE DE CHAMBRE)
-        foreach ($lesTypesChambres as $unTypeChambre) {
+        foreach ($lesTypesRepresentation as $unTypeRepresentation) {
 
             echo " 
             <tr class='ligneTabQuad'>
-               <td>".$unTypeChambre->getId()."</td>
-               <td>".$unTypeChambre->getLibelle()."</td>";
-            // On récupère le nombre de chambres offertes pour l'établissement 
-            // et le type de chambre actuellement traités
-//            $nbOffre = obtenirNbOffre($connexion, $idEtab, $unTypeChambre->getId());
-            $uneOffre = OffreDAO::getOneById($unEtablissement->getId(), $unTypeChambre->getId());
+               <td>".$unTypeRepresentation->getId()."</td>
+               <td>".$unTypeRepresentation->getLibelle()."</td>";
+            // On récupère les representation
+            $uneOffreRep = OffreDAO::getOneById($uneRepresentation->getId(), $unTypeChambre->getId());
             if (is_null($uneOffre)){
-                $nbOffre = 0;
+                $nbOffreRep = 0;
             }else{
-                $nbOffre = $uneOffre->getNbChambres();
+                $nbOffreRep = $uneOffre->getNbChambres();
             }
             echo "
-               <td>$nbOffre</td>
+               <td>$nbOffreRep</td>
             </tr>";
         }
         echo "
@@ -69,4 +68,3 @@ if ($nbEtab != 0 && $nbTypesChambres != 0) {
 }
 
 include("includes/_fin.inc.php");
-
