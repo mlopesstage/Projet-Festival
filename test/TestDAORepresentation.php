@@ -2,26 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>LieuDAO : test</title>
+        <title>RepresentationDAO : test</title>
     </head>
 
     <body>
 
         <?php
-        use modele\dao\LieuDAO;
+        use modele\dao\RepresentationDAO;
         use modele\dao\Bdd;
 
 require_once __DIR__ . '/../includes/autoload.php';
 
-        $id = '2';
+        $id = '3';
         Bdd::connecter();
 
-        echo "<h2>Test LieuDAO</h2>";
+        echo "<h2>Test RepresentationDAO</h2>";
 
         // Test n°1
         echo "<h3>Test getOneById</h3>";
         try {
-            $objet = LieuDAO::getOneById($id);
+            $objet = RepresentationDAO::getOneById($id);
             var_dump($objet);
         } catch (Exception $ex) {
             echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
@@ -30,7 +30,7 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°2
         echo "<h3>Test getAll</h3>";
         try {
-            $lesObjets = LieuDAO::getAll();
+            $lesObjets = RepresentationDAO::getAll();
             var_dump($lesObjets);
         } catch (Exception $ex) {
             echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();

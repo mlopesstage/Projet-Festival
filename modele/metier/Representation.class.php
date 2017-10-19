@@ -45,7 +45,7 @@ class Representation {
         $this->id = $id;
         $this->idLieu = $idLieu;
         $this->idGroupe = $idGroupe;
-        $this->datedateRep = $dateRep;
+        $this->dateRep = $dateRep;
         $this->heureDebut = $heureDebut;
         $this->heureFin= $heureFin;
         
