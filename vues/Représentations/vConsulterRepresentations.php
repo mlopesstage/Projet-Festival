@@ -43,8 +43,6 @@ if ($nbRep != 0 && $nbTypesRepresentation != 0) {
          </tr>";
 
         // BOUCLE SUR LES TYPES DE REPRESENTATION (AFFICHAGE D'UNE LIGNE PAR TYPE DE 
-        // REPRESENTATION AVEC LE NOMBRE DE CHAMBRES OFFERTES DANS L'ÉTABLISSEMENT POUR 
-        // LE TYPE DE CHAMBRE)
         foreach ($lesTypesRepresentation as $unTypeRepresentation) {
 
             echo " 
