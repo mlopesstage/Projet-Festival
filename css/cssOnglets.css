@@ -6,9 +6,8 @@
    /* list-style-type est à préciser impérativement sinon l'onglet actif est 
    marqué d'un point avec certains navigateurs (ex : FireFox) */
    list-style-type:none;
-   /* Il est impératif de mettre une marge gauche négative sinon décalage */ 
-   margin-left:-40px;
    text-align:center;
+   overflow: hidden;
 }
 
 /* Style général de chaque onglet */
@@ -29,8 +28,8 @@
    certains navigateurs n'acceptent pas les nombres réels donc on met
    un nombre entier) mais pour l'onglet actif, on passe à 20% (voir styles 
    ongletOuvertPrem et ongletOuvert) */
-   width:18%;
-   height:5%;
+   width:13%;
+   height:50%;
 }
 
 /* Style de l'onglet ouvert cas 1er onglet */
@@ -39,7 +38,6 @@
    /* Effacement du trait inférieur (pour cela, on le met de la même couleur que
    le fond de la page) */
    border-bottom:solid 2px #FFFFC0;
-   width:20%;
 }
 
 /* Style de l'onglet ouvert cas autres onglets que le 1er */
@@ -49,7 +47,6 @@
    de la même couleur que le fond de la page) */
    border-bottom:solid 2px #FFFFC0;
    border-left:solid 2px #FFFFC0;
-   width:20%;
 }
 
 /* Style de l'onglet non ouvert cas 1er onglet */

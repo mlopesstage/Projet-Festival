@@ -7,6 +7,7 @@
         <link href="css/cssGeneral.css" rel="stylesheet" type="text/css">
         <link href="css/cssOnglets.css" rel="stylesheet" type="text/css">
     </head>
+    
     <body class='basePage'>
         <div style="text-align:right;">v. 2017</div>
         <!--  Tableau contenant le titre et les menus -->
@@ -43,5 +44,3 @@
             <tr>
                 <td class="basePage">
                     <br><center><br>
-
-
