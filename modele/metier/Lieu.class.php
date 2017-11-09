@@ -36,7 +36,7 @@ class Lieu {
         $this->capaciteAccueil = $capaciteAccueil;
         
     }
-
+    
     function getId() {
         return $this->id;
     }
