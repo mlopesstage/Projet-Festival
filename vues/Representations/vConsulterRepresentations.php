@@ -66,5 +66,4 @@ $x=-1;
         }
         echo "
       </table><br>";
-    
 include("includes/_fin.inc.php");
