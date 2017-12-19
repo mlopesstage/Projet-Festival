@@ -47,8 +47,8 @@ class RepresentationDAO {
         // avec bindParam, la valeur affectée à la requête évoluerait avec celle de la variable sans
         // qu'il soit besoin de refaire un appel explicite à bindParam
         $stmt->bindValue(':id', $uneRepresentation->getId());
-        $stmt->bindValue(':idlieu', $uneRepresentation->getLeLieu());
-        $stmt->bindValue(':idgroupe', $uneRepresentation->getLeGroupe());
+        $stmt->bindValue(':idlieu', $uneRepresentation->getIdLieu());
+        $stmt->bindValue(':idgroupe', $uneRepresentation->getIdGroupe());
         $stmt->bindValue(':daterep', $uneRepresentation->getDateRep());
         $stmt->bindValue(':heuredebut', $uneRepresentation->getHeureDebut());
         $stmt->bindValue(':heurefin', $uneRepresentation->getHeureFin());

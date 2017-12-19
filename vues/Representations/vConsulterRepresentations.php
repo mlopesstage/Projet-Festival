@@ -20,13 +20,13 @@ $x=-1;
             $x=$x+1;
             echo "<strong>$date</strong><br>
    
-            <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+            <table width='60%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
             echo "
             <tr class='enTeteTabQuad'>
-               <td width='30%'>Lieu</td>
+               <td width='50%'>Lieu</td>
                <td width='30%'>Groupe</td>
-               <td width='20%'>Heure Début</td> 
-               <td width='20%'>Heure Fin</td>
+               <td width='10%'>Heure Début</td> 
+               <td width='10%'>Heure Fin</td>
             </tr>";
         }
         
@@ -35,24 +35,27 @@ $x=-1;
             echo "</table><br>";
             echo "<strong>$date</strong><br>
             
-            <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+            <table width='60%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
             echo "
             <tr class='enTeteTabQuad'>
-               <td width='30%'>Lieu</td>
+               <td width='50%'>Lieu</td>
                <td width='30%'>Groupe</td>
-               <td width='20%'>Heure Début</td> 
-               <td width='20%'>Heure Fin</td>
+               <td width='10%'>Heure Début</td> 
+               <td width='10%'>Heure Fin</td>
             </tr>";
         }
         
         // AFFICHAGE DE LA LIGNE D'EN-TÊTE
-        
+        $arrayheure = explode(':',$uneRepresentation->getHeureDebut());
+        $newheuredeb = $arrayheure[0].':'.$arrayheure[1];
+        $arrayheure = explode(':',$uneRepresentation->getHeureFin());
+        $newheurefin = $arrayheure[0].':'.$arrayheure[1];
             echo " 
             <tr class='ligneTabQuad'>
                <td>".$uneRepresentation->getLeLieu()->getAdresseLieu()."</td>
                <td>".$uneRepresentation->getLeGroupe()->getNom()."</td>
-               <td>".$uneRepresentation->getHeureDebut()."</td>
-               <td>".$uneRepresentation->getHeureFin()."</td>";
+               <td>".$newheuredeb."</td>
+               <td>".$newheurefin."</td>";
             // On récupère le nombre de chambres offertes pour l'établissement 
             // et le type de chambre actuellement traités
 //            $nbOffre = obtenirNbOffre($connexion, $idEtab, $unTypeChambre->getId());
