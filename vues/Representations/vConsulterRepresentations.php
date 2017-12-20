@@ -15,27 +15,27 @@ $x=-1;
         $date = $uneRepresentation->getDateRep();
         // AFFICHAGE DU NOM DE L'ÉTABLISSEMENT ET D'UN LIEN VERS LE FORMULAIRE DE
         // MODIFICATION
-        if($x==-1){
-            $dateprec=$date;
-            $x=$x+1;
-            echo "<strong>$date</strong><br>
-   
-            <table width='60%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
-            echo "
-            <tr class='enTeteTabQuad'>
-               <td width='50%'>Lieu</td>
-               <td width='30%'>Groupe</td>
-               <td width='10%'>Heure Début</td> 
-               <td width='10%'>Heure Fin</td>
-            </tr>";
-        }
-        
+//        if($x==-1){
+//            $dateprec=$date;
+//            $x=$x+1;
+//            echo "<strong>$date</strong><br>
+//   
+//            <table width='60%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+//            echo "
+//            <tr class='enTeteTabQuad'>
+//               <td width='50%'>Lieu</td>
+//               <td width='30%'>Groupe</td>
+//               <td width='10%'>Heure Début</td> 
+//               <td width='10%'>Heure Fin</td>
+//            </tr>";
+//        }
+
         if($dateprec!=$date){
             $dateprec=$date;
             echo "</table><br>";
-            echo "<strong>$date</strong><br>
+            echo "<strong><center>$date</center></strong><br>
             
-            <table width='60%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+            <table width='60%' cellspacing='0' cellpadding='0' class='tabQuadrille' align='center'>";
             echo "
             <tr class='enTeteTabQuad'>
                <td width='50%'>Lieu</td>
