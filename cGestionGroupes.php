@@ -21,7 +21,6 @@ if (!isset($_REQUEST['action'])) {
 }
 $action = $_REQUEST['action'];
 
-
 // Aiguillage selon l'étape
 switch ($action) {
     case 'initial' :
@@ -53,7 +52,6 @@ switch ($action) {
         include("vues/GestionGroupes/vObtenirGroupes.php");
         break;
     
-
     case 'validerCreerGroupe':case 'validerModifierGroupe':
         $id = $_REQUEST['id'];
         $nom = $_REQUEST['nom'];
@@ -62,13 +60,7 @@ switch ($action) {
         $nbPers = $_REQUEST['nbPers'];
         $nomPays = $_REQUEST['nomPays'];
         $hebergement = $_REQUEST['hebergement'];
-      
 
-  
-        
-        
-        
-        
         if ($action == 'validerCreerGroupe') {
             verifierDonneesGroupeC ($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement);         
             if (nbErreurs() == 0) {
@@ -94,15 +86,6 @@ switch ($action) {
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
 
-
-
-
-//////////
-
-
-
-
-
 function verifierDonneesGroupeC($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement) {
     if ($id == "" || $nom == "" || $identite == "" || $adresse == "" ||
             $nbPers == "" || $nomPays == "" || $hebergement == "" ) {
@@ -119,16 +102,11 @@ function verifierDonneesGroupeC($id, $nom, $identite, $adresse, $nbPers, $nomPay
                 ajouterErreur("Le Groupe $id existe déjà");
             }
         }
-       
     }
     if ($nom != "" && GroupeDAO::isAnExistingName(true, $id, $nom)) {
         ajouterErreur("Le Groupe $nom existe déjà");
     }
-    
-    //////////
-       
 }
-
 
 function verifierDonneesGroupeM($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement) {
     if ($nom == "" || $identite == "" || $adresse == "" || $ville == "" ||
@@ -138,6 +116,4 @@ function verifierDonneesGroupeM($id, $nom, $identite, $adresse, $nbPers, $nomPay
     if ($nom != "" && EtablissementDAO::isAnExistingName(false, $id, $nom)) {
         ajouterErreur("Le groupe $nom existe déjà");
     }
-
-
 }

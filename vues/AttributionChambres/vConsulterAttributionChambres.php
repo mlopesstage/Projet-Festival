@@ -1,5 +1,4 @@
 <?php
-
 use modele\dao\TypeChambreDAO;
 use modele\dao\GroupeDAO;
 use modele\dao\EtablissementDAO;
@@ -82,7 +81,6 @@ if ($nbEtabOffrantChambres != 0) {
             foreach ($lesTypesChambres as $unTypeChambre) {
                 // On recherche si des chambres du type en question ont 
                 // déjà été attribuées à ce groupe dans l'établissement
-//                $nbOccupGroupe = obtenirNbOccupGroupe($connexion, $idEtab, $unTypeChambre->getId(), $idGroupe);
                 /* @var $uneAttrib modele\metier\Attribution */
                 $uneAttrib = AttributionDAO::getOneById($idEtab, $unTypeChambre->getId(), $idGroupe);
                 if (!is_null($uneAttrib)) {
@@ -103,4 +101,3 @@ if ($nbEtabOffrantChambres != 0) {
 }
 
 include("includes/_fin.inc.php");
-

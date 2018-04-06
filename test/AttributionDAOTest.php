@@ -15,7 +15,7 @@
         use modele\dao\Bdd;
         use modele\metier\Attribution;
 
-require_once __DIR__ . '/../includes/autoload.php';
+        require_once __DIR__ . '/../includes/autoload.php';
 
         Bdd::connecter();
 
@@ -131,7 +131,6 @@ require_once __DIR__ . '/../includes/autoload.php';
         
         Bdd::deconnecter();
         ?>
-
 
     </body>
 </html>

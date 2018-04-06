@@ -11,7 +11,7 @@
         use modele\dao\LieuDAO;
         use modele\dao\Bdd;
 
-require_once __DIR__ . '/../includes/autoload.php';
+        require_once __DIR__ . '/../includes/autoload.php';
 
         $id = '2';
         Bdd::connecter();
@@ -40,5 +40,4 @@ require_once __DIR__ . '/../includes/autoload.php';
         ?>
 
     </body>
-    
 </html>

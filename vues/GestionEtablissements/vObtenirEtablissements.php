@@ -38,7 +38,6 @@ foreach ($lesEtablissements as $unEtablissement) {
 
     // S'il existe déjà des attributions pour l'établissement, il faudra
     // d'abord les supprimer avant de pouvoir supprimer l'établissement
-//    if (!existeAttributionsEtab($connexion, $id)) {
     $lesAttributionsDeCetEtablissement = AttributionDAO::getAllByIdEtab($id);
     if (count($lesAttributionsDeCetEtablissement)==0) {
         echo "
@@ -59,4 +58,3 @@ echo "
 Création d'un établissement</a >";
 
 include("includes/_fin.inc.php");
-

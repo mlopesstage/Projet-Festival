@@ -6,7 +6,6 @@ namespace modele\metier;
  * Une instance d'Attribution représente le fait qu'un groupe 
  * bénéficie d'une offre (un type de chambre dans un établissement)
  * pour un certain nombre de chabres
- * @author btssio
  */
 class Attribution {
     /**
@@ -50,6 +49,4 @@ class Attribution {
     function setNbChambres($nbChambres) {
         $this->nbChambres = $nbChambres;
     }
-
-
 }

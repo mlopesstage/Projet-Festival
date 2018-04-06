@@ -1,15 +1,11 @@
 <?php
-
 namespace modele\dao;
-
 use modele\metier\Attribution;
 use \PDO;
 
 /**
  * Description of AttributionDAO
  * Classe métier :  Attribution
- * @author prof
- * @version 2017
  */
 class AttributionDAO {
 
@@ -239,6 +235,4 @@ class AttributionDAO {
         $nb = $stmt->fetchColumn();
         return $nb;
     }
-
-
 }

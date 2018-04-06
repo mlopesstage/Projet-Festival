@@ -9,8 +9,6 @@ use PDO;
 /**
  * Description of TypeChambreDAO
  * Classe métier  :  TypeChambre
- * @author prof
- * @version 2017
  */
 class TypeChambreDAO {
 
@@ -71,7 +69,6 @@ class TypeChambreDAO {
         }
         return $objetConstruit;
     }
-
 
    /**
      * Insérer un nouvel enregistrement dans la table à partir de l'état d'un objet métier
@@ -146,7 +143,6 @@ class TypeChambreDAO {
         return $stmt->fetchColumn(0);
     }
 
-
     /**
      * Recherche un identifiant de type de chambre existant
      * @param string $id du type de chambre recherché
@@ -159,5 +155,4 @@ class TypeChambreDAO {
         $stmt->execute();
         return $stmt->fetchColumn(0);
     }
-
 }

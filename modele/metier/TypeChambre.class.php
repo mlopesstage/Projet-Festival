@@ -4,7 +4,6 @@ namespace modele\metier;
 /**
  * Description of TypeChambre
  * Classification des chambres en fonction de leur capacité
- * @author prof
  */
 class TypeChambre {
     private $id;
@@ -28,6 +27,4 @@ class TypeChambre {
     function setLibelle($libelle) {
         $this->libelle = $libelle;
     }
-
-
 }

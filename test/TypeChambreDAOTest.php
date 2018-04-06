@@ -55,7 +55,6 @@
             echo "<h4>*** échec de la requête ***</h4>" . $ex->getMessage();
         }
 
-
         // Test n°4
         echo "<h3>4- update</h3>";
         try {
@@ -128,7 +127,6 @@
         }
         Bdd::deconnecter();
         ?>
-
 
     </body>
 </html>

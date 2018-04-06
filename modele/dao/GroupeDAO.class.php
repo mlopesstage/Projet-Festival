@@ -1,17 +1,13 @@
 <?php
 namespace modele\dao;
-
 use modele\metier\Groupe;
 use PDO;
 
 /**
  * Description of GroupeDAO
  * Classe métier :  Groupe
- * @author prof
- * @version 2017
  */
 class GroupeDAO {
-
 
     /**
      * Instancier un objet de la classe Groupe à partir d'un enregistrement de la table GROUPE
@@ -30,7 +26,6 @@ class GroupeDAO {
 
         return $unGroupe;
     }
-
 
     /**
      * Retourne la liste de tous les groupes
@@ -69,7 +64,6 @@ class GroupeDAO {
         return $objetConstruit;
     }
 
-
     /**
      * Retourne la liste des groupes attribués à un établissement donné
      * @param string $idEtab
@@ -95,7 +89,6 @@ class GroupeDAO {
         } 
         return $lesGroupes;
     }
-
     
     /**
      * Retourne la liste des groupes souhaitant un hébergement, ordonnée par id
@@ -113,8 +106,4 @@ class GroupeDAO {
         }
         return $lesGroupes;
     }
-
-
-    
-    
 }

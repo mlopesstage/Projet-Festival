@@ -4,7 +4,6 @@ namespace modele\metier;
 /**
  * Description of Etablissement
  * un établissement a des capacités d'hébergement à offrir au festival
- * @author prof
  */
 class Etablissement {
     /**
@@ -161,7 +160,4 @@ class Etablissement {
     function setPrenomResp($prenomResp) {
         $this->prenomResp = $prenomResp;
     }
-
-
-    
 }

@@ -5,8 +5,8 @@ namespace modele\metier;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-// Création de la classe Lieu par RONY
 
+// Création de la classe Lieu
 class Lieu {
     /**
      * code  de 8 caractères alphanum.
@@ -28,13 +28,11 @@ class Lieu {
      */
     private $capaciteAccueil;
     
-    
     function __construct($id, $nomLieu, $adresseLieu, $capaciteAccueil) {
         $this->id = $id;
         $this->nomLieu = $nomLieu;
         $this->adresseLieu = $adresseLieu;
         $this->capaciteAccueil = $capaciteAccueil;
-        
     }
     
     function getId() {
@@ -68,5 +66,4 @@ class Lieu {
     function setcapaciteAccueil($capaciteAccueil) {
         $this->capaciteAccueil = $capaciteAccueil;
     }
-
 }

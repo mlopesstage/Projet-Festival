@@ -1,7 +1,6 @@
 <?php
 
 namespace modele\dao;
-
 use \PDO;
 use \PDOException;
 
@@ -10,7 +9,6 @@ use \PDOException;
  * Singleton de connexion à la base de données
  * Remarque : les noms de colonnes de la BDD seront automatiquement convertis en majuscules
  * (option PDO : $pdo_options[PDO::ATTR_CASE] = PDO::CASE_UPPER
- * @author btssio
  */
 /**
  * DSN MYSQL
@@ -67,5 +65,4 @@ class Bdd {
     public static function getPdo() {
         return self::$pdo;
     }
-
 }

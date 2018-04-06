@@ -21,20 +21,12 @@ if (!isset($_REQUEST['action'])) {
 }
 $action = $_REQUEST['action'];
 
-
 // Aiguillage selon l'étape
 switch ($action) {
     case 'initial' :
         include("vues/Representations/vConsulterRepresentations.php");
         break;
-
-   
 }
 
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
-
-
-   
-
-

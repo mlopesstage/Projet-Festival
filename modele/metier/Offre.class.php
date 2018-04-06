@@ -3,8 +3,6 @@ namespace modele\metier;
 
 /**
  * Description d'une offre d'hébergement
- * 
- * @author prof
  */
 class Offre {
     /** établissement concerné par l'offre
@@ -51,7 +49,4 @@ class Offre {
     function setNbChambres($nbChambre) {
         $this->nbChambres = $nbChambre;
     }
-
-
-    
 }

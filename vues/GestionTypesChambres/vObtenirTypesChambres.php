@@ -34,7 +34,6 @@ foreach ($lesTypesChambres as $unTypeChambre) {
 
     // S'il existe déjà des attributions pour le type de chambre, il faudra
     // d'abord les supprimer avant de pouvoir supprimer le type de chambre
-//    if (!existeAttributionsTypeChambre($connexion, $id)) {
     if (count(AttributionDAO::getAllByIdTypeChambre($id))==0) {
         echo "
             <td width='26%' align='center'>
@@ -52,4 +51,3 @@ echo "
 Création d'un type de chambre</a>";
 
 include("includes/_fin.inc.php");
-

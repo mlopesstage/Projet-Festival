@@ -10,7 +10,6 @@ use modele\dao\Bdd;
 require_once __DIR__ . '/includes/autoload.php';
 Bdd::connecter();
 
-
 include("includes/_gestionErreurs.inc.php");
 //include("includes/gestionDonnees/_connexion.inc.php");
 //include("includes/gestionDonnees/_gestionBaseFonctionsCommunes.inc.php");
@@ -47,7 +46,6 @@ switch ($action) {
             // attributions déjà effectuées pour cet établissement et ce type de
             // chambre, la modification n'est pas effectuée
             $entier = estEntier($nbChambres[$i]);
-//            $modifCorrecte = estModifOffreCorrecte($connexion, $idEtab, $idTypeChambre[$i], $nbChambres[$i]);
             // La modification de l'offre est acceptée si elle est supérieure aux nbre de chambres déjà attribuées
             $estModifCorrecte = ($nbChambres[$i] >= AttributionDAO::getNbOccupiedRooms($idEtab, $idTypeChambre[$i]));
             if (!$entier || !$estModifCorrecte) {
@@ -79,4 +77,3 @@ switch ($action) {
 
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
-

@@ -13,7 +13,7 @@
         use modele\dao\Bdd;
         use modele\metier\Etablissement;
 
-require_once __DIR__ . '/../includes/autoload.php';
+        require_once __DIR__ . '/../includes/autoload.php';
 
         $id = '0352072M';
         Bdd::connecter();
@@ -93,7 +93,7 @@ require_once __DIR__ . '/../includes/autoload.php';
         echo "<h3>5- delete</h3>";
         try {
             $ok = EtablissementDAO::delete($id);
-//            $ok = EtablissementDAO::delete("xxx");
+            // $ok = EtablissementDAO::delete("xxx");
             if ($ok) {
                 echo "<h4>ooo réussite de la suppression ooo</h4>";
             } else {
@@ -151,7 +151,6 @@ require_once __DIR__ . '/../includes/autoload.php';
 
         Bdd::deconnecter();
         ?>
-
 
     </body>
 </html>

@@ -1,5 +1,4 @@
 <?php
-
 echo "       
       </center>                    
       </td>
@@ -10,4 +9,3 @@ razErreurs();
 echo "
 </body>
 </html>";
-

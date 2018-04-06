@@ -1,5 +1,4 @@
 <?php
-
 use modele\dao\TypeChambreDAO;
 use modele\dao\GroupeDAO;
 use modele\dao\EtablissementDAO;
@@ -79,7 +78,6 @@ foreach ($lesEtabOffrantChambres as $unEtab) {
     // sans fond particulier
     foreach ($lesTypesChambres as $unTypeChambre) {
         $idTypeChambre = $unTypeChambre->getId();
-//        $nbOffre = obtenirNbOffre($connexion, $idEtab, $idTypeChambre);
         $uneOffre = OffreDAO::getOneById($idEtab, $idTypeChambre);
         if (is_null($uneOffre)) {
             $nbOffre = 0;
@@ -92,9 +90,7 @@ foreach ($lesEtabOffrantChambres as $unEtab) {
         } else {
             // Recherche du nombre de chambres occupées pour l'établissement 
             // et le type de chambre courants
-//            $nbOccup = obtenirNbOccup($connexion, $idEtab, $idTypeChambre);
             $nbOccup = AttributionDAO::getNbOccupiedRooms($idEtab, $idTypeChambre);
-
 
             // Calcul du nombre de chambres libres
             $nbChLib = $nbOffre - $nbOccup;
@@ -147,7 +143,6 @@ foreach ($lesGroupes as $unGroupe) {
             //    au groupe dans cet étab et il reste des chambres libres de 
             //    ce type dans l'établissement : affichage d'un lien pour 
             //    faire une attribution
-//            $nbOffre = obtenirNbOffre($connexion, $idEtab, $idTypeChambre);
             $uneOffre = OffreDAO::getOneById($idEtab, $idTypeChambre);
             if (is_null($uneOffre)) {
                 $nbOffre = 0;
@@ -158,7 +153,6 @@ foreach ($lesGroupes as $unGroupe) {
                 // Affichage d'une cellule vide sur fond gris 
                 echo "<td class='absenceOffre'>&nbsp;</td>";
             } else {
-//                $nbOccup = obtenirNbOccup($connexion, $idEtab, $idTypeChambre);
                 $nbOccup = AttributionDAO::getNbOccupiedRooms($idEtab, $idTypeChambre);
 
                 // Calcul du nombre de chambres libres
@@ -166,7 +160,6 @@ foreach ($lesGroupes as $unGroupe) {
 
                 // On recherche si des chambres du type en question ont déjà
                 // été attribuées à ce groupe dans cet établissement
-//                $nbOccupGroupe = obtenirNbOccupGroupe($connexion, $idEtab, $idTypeChambre, $idGroupe);
                 /* @var $uneAttrib modele\metier\Attribution */
                 $uneAttrib = AttributionDAO::getOneById($idEtab, $idTypeChambre, $idGroupe);
                 if (!is_null($uneAttrib)) {
@@ -222,4 +215,3 @@ echo "
 echo "<br><center><a href='cAttributionChambres.php'>Retour</a></center>";
 
 include("includes/_fin.inc.php");
-

@@ -4,7 +4,6 @@ namespace modele\metier;
 /**
  * Description of Groupe
  * un groupe musical se produisant au festival
- * @author prof
  */
 class Groupe {
     /**
@@ -108,6 +107,4 @@ class Groupe {
     function setHebergement($hebergement) {
         $this->hebergement = $hebergement;
     }
-
-
 }

@@ -5,8 +5,8 @@ namespace modele\metier;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-// Création de la classe representation par RONY
 
+// Création de la classe representation
 class Representation {
     /**
      * code  de 8 caractères alphanum.
@@ -40,7 +40,6 @@ class Representation {
      */
     private $heureFin ;
     
-    
     function __construct($id, Lieu $leLieu, Groupe $leGroupe, $dateRep, $heureDebut, $heureFin) {
         $this->id = $id;
         $this->leLieu = $leLieu;
@@ -48,7 +47,6 @@ class Representation {
         $this->dateRep = $dateRep;
         $this->heureDebut = $heureDebut;
         $this->heureFin= $heureFin;
-        
     }
     
     function getId() {
@@ -98,5 +96,4 @@ class Representation {
     function setHeureFin(temps $heureFin) {
         $this->heureFin = $heureFin;
     }
-
 }

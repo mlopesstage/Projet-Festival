@@ -1,6 +1,5 @@
 <?php
 namespace modele\dao;
-
 use modele\metier\Representation;
 use modele\metier\Groupe;
 use modele\dao\LieuDAO;
@@ -10,8 +9,6 @@ use \PDO;
 /**
  * Description of RepresentationDAO
  * Classe métier :  Representation
- * @author qbaudry
- * @version 2017
  */
 class RepresentationDAO {
 
@@ -27,7 +24,7 @@ class RepresentationDAO {
         $dateRep = $enreg['DATEREP'];
         $heureDebut = $enreg['HEUREDEBUT'];
         $heureFin = $enreg['HEUREFIN'];
-        // construire les objets Lieu et Groupe à partir de leur identifiant       
+        // construire les objets Lieu et Groupe à partir de leur identifiant
         $objetLieu = LieuDAO::getOneById($idLieu);
         $objetGroupe = GroupeDAO::getOneById($idGroupe);
         // instancier l'objet Offre
@@ -90,6 +87,4 @@ class RepresentationDAO {
         }
         return $objetConstruit;
     }
-    
-    
 }

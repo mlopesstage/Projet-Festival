@@ -13,4 +13,3 @@ Oui</a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href='cGestionTypesChambres.php'>Non</a></h3></center>";
 
 include("includes/_fin.inc.php");
-

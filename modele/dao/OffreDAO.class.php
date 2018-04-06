@@ -1,7 +1,5 @@
 <?php
-
 namespace modele\dao;
-
 use modele\metier\Offre;
 use modele\metier\Etablissement;
 use modele\metier\TypeChambre;
@@ -10,8 +8,6 @@ use PDO;
 /**
  * Description of OffreDAO
  * Classe métier :  Offre
- * @author prof
- * @version 2017
  */
 class OffreDAO {
 
@@ -159,5 +155,4 @@ class OffreDAO {
         $ok = $stmt->execute();
         return ($ok && $stmt->rowCount() > 0);
     }
-
 }

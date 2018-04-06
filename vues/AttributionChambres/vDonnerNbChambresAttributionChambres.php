@@ -35,4 +35,3 @@ echo "<input type='submit' value='Valider' name='valider'>&nbsp;&nbsp;&nbsp;
 </form>";
 
 include("includes/_fin.inc.php");
-

@@ -2,8 +2,6 @@
 /**
  * Contrôleur : gestion des établissements
  */
-
-
 use modele\dao\EtablissementDAO;
 use modele\metier\Etablissement;
 use modele\dao\Bdd;
@@ -122,7 +120,6 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
     }   
 }
 
-
 function verifierDonneesEtabM($id, $nom, $adresseRue, $codePostal, $ville, $tel,$nomResponsable,$adresseElectronique) {
     if ($nom == "" || $adresseRue == "" || $codePostal == "" || $ville == "" ||
             $tel == "" || $nomResponsable == "" || $adresseElectronique== "") {
@@ -146,5 +143,4 @@ function estUnCp($codePostal) {
 
 function estUnAE($adresseElectronique) {
     return preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $adresseElectronique );
-}
-                    
+}           

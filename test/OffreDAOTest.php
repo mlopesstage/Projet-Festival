@@ -15,7 +15,7 @@
         use modele\dao\Bdd;
         use modele\metier\Offre;
 
-require_once __DIR__ . '/../includes/autoload.php';
+        require_once __DIR__ . '/../includes/autoload.php';
 
         Bdd::connecter();
 
@@ -41,16 +41,16 @@ require_once __DIR__ . '/../includes/autoload.php';
         // Test n°3
         echo "<h3>3- insert</h3>";
         try {
-//            /* @var $unEtab modele\metier\Etablissement */
-//            $unEtab = EtablissementDAO::getOneById($idEtab);
-//            /* @var $unTypeCh modele\metier\TypeChambre */
-//            $unTypeCh = TypeChambreDAO::getOneById($idTypeCh_2);
-//            /* @var $objet modele\metier\Offre */
-//            $objet = new Offre($unEtab, $unTypeCh, $nb_1);
+//          /* @var $unEtab modele\metier\Etablissement */
+//          $unEtab = EtablissementDAO::getOneById($idEtab);
+//          /* @var $unTypeCh modele\metier\TypeChambre */
+//          $unTypeCh = TypeChambreDAO::getOneById($idTypeCh_2);
+//          /* @var $objet modele\metier\Offre */
+//          $objet = new Offre($unEtab, $unTypeCh, $nb_1);
             $ok = OffreDAO::insertValues($idEtab, $idTypeCh_2, $nb_1);
             if ($ok) {
                 echo "<h4>ooo réussite de l'insertion ooo</h4>";
-//                $objetLu = OffreDAO::getOneById($unEtab->getId(), $unTypeCh->getId());
+                // $objetLu = OffreDAO::getOneById($unEtab->getId(), $unTypeCh->getId());
                 $objetLu = OffreDAO::getOneById($idEtab, $idTypeCh_2);
                 var_dump($objetLu);
             } else {
@@ -94,7 +94,6 @@ require_once __DIR__ . '/../includes/autoload.php';
 
         Bdd::deconnecter();
         ?>
-
-
+        
     </body>
 </html>

@@ -22,4 +22,3 @@ echo "
 </center>";
 
 include("includes/_fin.inc.php");
-

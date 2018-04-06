@@ -1,5 +1,4 @@
 <?php
-
 use modele\dao\EtablissementDAO;
 use modele\metier\Etablissement;
 use modele\dao\Bdd;
@@ -23,7 +22,6 @@ $type = $unEtab->getTypeEtab();
 $civiliteResponsable = $unEtab->getCiviliteResp();
 $nomResponsable = $unEtab->getNomResp();
 $prenomResponsable = $unEtab->getPrenomResp();
-
 
 echo "
 <br>
@@ -75,4 +73,3 @@ echo "
 <a href='cGestionEtablissements.php'>Retour</a>";
 
 include("includes/_fin.inc.php");
-

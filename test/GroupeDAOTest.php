@@ -12,7 +12,7 @@
         use modele\dao\GroupeDAO;
         use modele\dao\Bdd;
 
-require_once __DIR__ . '/../includes/autoload.php';
+        require_once __DIR__ . '/../includes/autoload.php';
 
         $id = 'g010';
         Bdd::connecter();
@@ -48,7 +48,6 @@ require_once __DIR__ . '/../includes/autoload.php';
 
         Bdd::deconnecter();
         ?>
-
 
     </body>
 </html>

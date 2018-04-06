@@ -75,4 +75,3 @@ echo "
 </table>";
 
 include ("includes/_fin.inc.php");
-

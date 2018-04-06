@@ -16,5 +16,4 @@ function __autoload($className)
     } else {
         throw new Exception('Pb autoload : Le fichier ' . $fileName . ' n\'existe pas.');
     }
-    
 }

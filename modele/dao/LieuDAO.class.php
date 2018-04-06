@@ -1,14 +1,11 @@
 <?php
 namespace modele\dao;
-
 use modele\metier\Lieu;
 use \PDO;
 
 /**
  * Description of LieuDAO
  * Classe métier :  Lieu
- * @author qbaudry
- * @version 2017
  */
 class LieuDAO {
 

@@ -1,7 +1,5 @@
 <?php
-
 namespace modele\dao;
-
 use modele\metier\Etablissement;
 use PDOStatement;
 use PDO;
@@ -9,8 +7,6 @@ use PDO;
 /**
  * Description of EtablissementDAO
  * Classe métier : Etablissement
- * @author prof
- * @version 2017
  */
 class EtablissementDAO {
 
@@ -97,7 +93,6 @@ class EtablissementDAO {
         return $objetConstruit;
     }
 
-    
     /**
      * Insérer un nouvel enregistrement dans la table à partir de l'état d'un objet métier
      * @param Etablissement $objet objet métier à insérer
@@ -208,5 +203,4 @@ class EtablissementDAO {
         }
         return $stmt->fetchColumn(0);
     }
-
 }

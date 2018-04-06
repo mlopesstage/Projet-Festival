@@ -46,7 +46,6 @@ switch ($action) {
         $idTypeChambre = $_REQUEST['idTypeChambre'];
         $idGroupe = $_REQUEST['idGroupe'];
         $nbChambres = $_REQUEST['nbChambres'];
-//        modifierAttribChamb($connexion, $idEtab, $idTypeChambre, $idGroupe, $nbChambres);
         if ($nbChambres == 0) {
             AttributionDAO::delete($idEtab, $idTypeChambre, $idGroupe);
         } else {
@@ -73,7 +72,6 @@ Bdd::deconnecter();
 // chambre en question (retournera 0 si absence d'offre ou si absence de 
 // disponibilité)  
 function obtenirNbDispo($idEtab, $idTypeChambre) {
-//    $nbOffre = obtenirNbOffre($connexion, $idEtab, $idTypeChambre);
     Bdd::connecter();
     $uneOffre = OffreDAO::getOneById($idEtab, $idTypeChambre);
     if (is_null($uneOffre)) {
@@ -85,7 +83,6 @@ function obtenirNbDispo($idEtab, $idTypeChambre) {
     if ($nbOffre != 0) {
         // Recherche du nombre de chambres occupées pour l'établissement et le
         // type de chambre en question
-//        $nbOccup = obtenirNbOccup($connexion, $idEtab, $idTypeChambre);
         $nbOccup = AttributionDAO::getNbOccupiedRooms($idEtab, $idTypeChambre);
         // Calcul du nombre de chambres libres
         $nbChLib = $nbOffre - $nbOccup;
@@ -94,6 +91,3 @@ function obtenirNbDispo($idEtab, $idTypeChambre) {
         return 0;
     }
 }
-
-
-
