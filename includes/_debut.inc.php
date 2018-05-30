@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['logged'] == FALSE) {
+    header('Location: cLogin.php');
+}
+?>
+
 <!DOCTYPE html">
 <html lang="fr">
     <head>
@@ -18,6 +25,9 @@
             <td class="titre"><br>Festival Folklores du Monde <br>
                 <span id="texteNiveau2" class="texteNiveau2">
                     H&eacute;bergement des groupes</span><br>&nbsp;
+                    <form id='blocLogin' action='cLogout.php' method='post'>
+                        <input type='submit' value='Déconnexion' class='sign-up-button'>
+                    </form>
             </td>
         </tr>
         <!-- Menus -->
